@@ -18,8 +18,8 @@ export default defineConfig({
         },
         author: "Zebeqo",
         description: {
-          "": "为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框批量复制磁力链接功能",
-          zh: "为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框批量复制磁力链接功能",
+          "": "为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接",
+          zh: "为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接",
           en: "For detail pages, such as https://mikanani.me/Home/Bangumi/2841, provide checkboxes to batch copy magnet links.",
         },
         updateURL:
