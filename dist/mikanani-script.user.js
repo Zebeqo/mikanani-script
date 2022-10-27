@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name            蜜柑计划|mikanani|Mikan Project|批量复制磁力链接
-// @name:en         mikanani|Mikan Project|Multi-selector
 // @name:zh         蜜柑计划|mikanani|Mikan Project|批量复制磁力链接
+// @name:en         mikanani|Mikan Project|Multi-selector
 // @namespace       https://github.com/Zebeqo/
-// @version         1.0.0
+// @version         1.0.1
 // @author          Zebeqo
-// @description     为详情页，如https://mikanani.me/Home/Bangumi/2841，提供复选框批量复制磁力链接功能
+// @description     为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接
+// @description:zh  为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接
 // @description:en  For detail pages, such as https://mikanani.me/Home/Bangumi/2841, provide checkboxes to batch copy magnet links.
 // @icon            https://mikanani.me/images/favicon.ico
 // @supportURL      https://github.com/Zebeqo/mikanani-script/issues
