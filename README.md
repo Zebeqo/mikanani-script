@@ -1,6 +1,6 @@
 # mikanani-script
 
-My script for [Mikan Project | 蜜柑计划](https://mikanani.me)
+Userscript for [Mikan Project | 蜜柑计划](https://mikanani.me)
 
 ## Features
 
