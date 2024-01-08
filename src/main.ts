@@ -7,9 +7,10 @@ import Select from "./Select";
 const origOpen = XMLHttpRequest.prototype.open;
 XMLHttpRequest.prototype.open = function () {
   this.addEventListener("loadend", function () {
-    // re-add checkbox and copyLink after show more action
+    // re-add checkbox, copyLink and select after show more action
     addCheckbox();
     addCopyLink();
+    addSelect();
   });
   // @ts-ignore
   origOpen.apply(this, arguments);
