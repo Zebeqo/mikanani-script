@@ -1,6 +1,7 @@
 // @ts-ignore isolatedModules
 import Checkbox from "./Checkbox";
 import CopyLink from "./CopyLink";
+import Select from "./Select";
 
 // https://stackoverflow.com/a/27363569
 const origOpen = XMLHttpRequest.prototype.open;
@@ -37,5 +38,20 @@ const addCopyLink = () => {
   });
 };
 
+const addSelect = () => {
+  document.querySelectorAll('th[width="70%"]').forEach((head) => {
+    if (head.childElementCount === 1) {
+      // add padding
+      head.insertAdjacentText("beforeend", " ");
+      head.insertAdjacentElement("beforeend", Select.SelectAll());
+      head.insertAdjacentText("beforeend", " ");
+      head.insertAdjacentElement("beforeend", Select.UnselectAll());
+      head.insertAdjacentText("beforeend", " ");
+      head.insertAdjacentElement("beforeend", Select.ReverseSelect());
+    }
+  });
+}
+
 addCheckbox();
 addCopyLink();
+addSelect();
