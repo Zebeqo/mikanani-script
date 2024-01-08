@@ -44,11 +44,84 @@
     });
     return link;
   };
+  const SelectAll = () => {
+    const select = document.createElement("a");
+    select.setAttribute("class", "subgroup-subscribe");
+    select.append(document.createTextNode("[\u5168\u9009]"));
+    select.setAttribute("style", "float: right;");
+    select.addEventListener("click", () => {
+      let parent = select;
+      while (parent.nodeName.toLowerCase() !== "table") {
+        parent = parent.parentNode;
+      }
+      const checkboxs = parent.querySelectorAll("input[type=checkbox]");
+      checkboxs.forEach((checkbox) => {
+        checkbox.checked = true;
+        const magnetlink = checkbox.dataset["magnetLink"];
+        if (!clipboard.includes(magnetlink)) {
+          clipboard.push(magnetlink);
+        }
+      });
+    });
+    return select;
+  };
+  const UnselectAll = () => {
+    const select = document.createElement("a");
+    select.setAttribute("class", "subgroup-subscribe");
+    select.append(document.createTextNode("[\u53D6\u6D88\u5168\u9009]"));
+    select.setAttribute("style", "float: right;");
+    select.addEventListener("click", () => {
+      let parent = select;
+      while (parent.nodeName.toLowerCase() !== "table") {
+        parent = parent.parentNode;
+      }
+      const checkboxs = parent.querySelectorAll("input[type=checkbox]");
+      checkboxs.forEach((checkbox) => {
+        checkbox.checked = false;
+        const magnetlink = checkbox.dataset["magnetLink"];
+        if (clipboard.includes(magnetlink)) {
+          clipboard.splice(
+            clipboard.findIndex((value) => value === magnetlink),
+            1
+          );
+        }
+      });
+    });
+    return select;
+  };
+  const ReverseSelect = () => {
+    const select = document.createElement("a");
+    select.setAttribute("class", "subgroup-subscribe");
+    select.append(document.createTextNode("[\u53CD\u9009]"));
+    select.setAttribute("style", "float: right;");
+    select.addEventListener("click", () => {
+      let parent = select;
+      while (parent.nodeName.toLowerCase() !== "table") {
+        parent = parent.parentNode;
+      }
+      const checkboxs = parent.querySelectorAll("input[type=checkbox]");
+      checkboxs.forEach((checkbox) => {
+        checkbox.checked = !checkbox.checked;
+        const magnetlink = checkbox.dataset["magnetLink"];
+        if (clipboard.includes(magnetlink)) {
+          clipboard.splice(
+            clipboard.findIndex((value) => value === magnetlink),
+            1
+          );
+        } else {
+          clipboard.push(magnetlink);
+        }
+      });
+    });
+    return select;
+  };
+  const Select = { SelectAll, UnselectAll, ReverseSelect };
   const origOpen = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function() {
     this.addEventListener("loadend", function() {
       addCheckbox();
       addCopyLink();
+      addSelect();
     });
     origOpen.apply(this, arguments);
   };
@@ -69,6 +142,19 @@
       }
     });
   };
+  const addSelect = () => {
+    document.querySelectorAll('th[width="70%"]').forEach((head) => {
+      if (head.childElementCount === 1) {
+        head.insertAdjacentText("beforeend", " ");
+        head.insertAdjacentElement("beforeend", Select.SelectAll());
+        head.insertAdjacentText("beforeend", " ");
+        head.insertAdjacentElement("beforeend", Select.UnselectAll());
+        head.insertAdjacentText("beforeend", " ");
+        head.insertAdjacentElement("beforeend", Select.ReverseSelect());
+      }
+    });
+  };
   addCheckbox();
   addCopyLink();
+  addSelect();
 })();
