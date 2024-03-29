@@ -29,7 +29,7 @@ const addCheckbox = () => {
 };
 
 const addCopyLink = () => {
-  document.querySelectorAll('th[width="70%"]').forEach((head) => {
+  document.querySelectorAll('th[width="65%"]').forEach((head) => {
     if (!head.childElementCount) {
       // add padding
       head.insertAdjacentText("beforeend", " ");
@@ -40,7 +40,7 @@ const addCopyLink = () => {
 };
 
 const addSelect = () => {
-  document.querySelectorAll('th[width="70%"]').forEach((head) => {
+  document.querySelectorAll('th[width="65%"]').forEach((head) => {
     if (head.childElementCount === 1) {
       // add padding
       head.insertAdjacentText("beforeend", " ");
