@@ -10,7 +10,10 @@ export default defineConfig({
         version: "1.0.3",
         icon: "https://mikanani.me/images/favicon.ico",
         namespace: "https://github.com/Zebeqo/",
-        match: ["https://mikanani.me/Home/Bangumi/*"],
+        match: [
+          "https://mikanani.me/Home/Bangumi/*",
+          "https://mikanime.tv/Home/Bangumi/*",
+        ],
         name: {
           "": "蜜柑计划|mikanani|Mikan Project|批量复制磁力链接",
           zh: "蜜柑计划|mikanani|Mikan Project|批量复制磁力链接",
