@@ -7,7 +7,7 @@ export default defineConfig({
     monkey({
       entry: "src/main.ts",
       userscript: {
-        version: "1.0.3",
+        version: "1.0.4",
         icon: "https://mikanani.me/images/favicon.ico",
         namespace: "https://github.com/Zebeqo/",
         match: [

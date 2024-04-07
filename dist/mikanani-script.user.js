@@ -3,7 +3,7 @@
 // @name:zh         蜜柑计划|mikanani|Mikan Project|批量复制磁力链接
 // @name:en         mikanani|Mikan Project|Multi-selector
 // @namespace       https://github.com/Zebeqo/
-// @version         1.0.3
+// @version         1.0.4
 // @author          Zebeqo
 // @description     为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接
 // @description:zh  为详情页，如 https://mikanani.me/Home/Bangumi/2841，提供复选框用于批量复制磁力链接
@@ -13,6 +13,7 @@
 // @downloadURL     https://raw.githubusercontent.com/Zebeqo/mikanani-script/master/dist/mikanani-script.user.js
 // @updateURL       https://raw.githubusercontent.com/Zebeqo/mikanani-script/master/dist/mikanani-script.user.js
 // @match           https://mikanani.me/Home/Bangumi/*
+// @match           https://mikanime.tv/Home/Bangumi/*
 // ==/UserScript==
 
 (function() {
